@@ -5,6 +5,7 @@ import FlowView from "./FlowView";
 import { useAppSelector } from "../ducks";
 import CaptureSetup from "./Modes/CaptureSetup";
 import Modes from "./Modes";
+import Replayer from "./Replayer"
 import { Tab } from "../ducks/ui/tabs";
 
 export default function MainView() {
@@ -16,9 +17,9 @@ export default function MainView() {
 
     return (
         <div className="main-view">
-            {currentTab === Tab.Capture ? (
-                <Modes />
-            ) : (
+            {currentTab === Tab.Capture ? (<Modes />) 
+            : currentTab === Tab.Replayer ? (<Replayer />)
+            : (
                 <>
                     {hasFlows ? <FlowTable /> : <CaptureSetup />}
                     {hasOneFlowSelected && (
