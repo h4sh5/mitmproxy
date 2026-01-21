@@ -8,6 +8,7 @@ import ui from "./ui/index";
 import connection from "./connection";
 import options from "./options";
 import commandBar from "./commandBar";
+import replayer from "./replayer";
 
 import backendState from "./backendState";
 import options_meta from "./options_meta";
@@ -25,6 +26,7 @@ export const reducer = {
     options_meta,
     backendState,
     processes,
+    replayer,
 };
 
 export const middlewares = {
